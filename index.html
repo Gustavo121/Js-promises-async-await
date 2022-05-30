@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de Async/Await</title>
+</head>
+<body>
+    <script>
+    /*
+    function pegaDados() {
+        const resultado = fetch('https://api.github.com/users/omariosouto')
+        .then((res) => {
+            console.log(res);
+        })
+
+        console.log(resultado);
+    }
+    */
+
+    async function pegaDados() { // para usar await, preciso coloca async na função
+        const resultado = await fetch('https://api.github.com/users/omariosouto')
+        const resultadoConvertido = await resultado.json();
+        console.log(resultadoConvertido)
+    }
+    </script>
+</body>
+</html>
