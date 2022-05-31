@@ -8,6 +8,11 @@
 </head>
 <body>
     <script>
+
+    fetch('https://api.github.com/users/omariosouto')
+    .then((res) => {
+        console.log(res);
+    }) // quando chamado a função fetch com then. é disparado uma requisição
     /*
     function pegaDados() {
         const resultado = fetch('https://api.github.com/users/omariosouto')
@@ -18,11 +23,19 @@
         console.log(resultado);
     }
     */
-
+    /*
     async function pegaDados() { // para usar await, preciso coloca async na função
         const resultado = await fetch('https://api.github.com/users/omariosouto')
         const resultadoConvertido = await resultado.json();
         console.log(resultadoConvertido)
+    }
+    // await vai executar antes da promise
+    */
+
+    async function pegaDados() {
+        const resultadoConvertido = await
+        fetch('https://api.github.com/users/omariosouto').then((res) => res.json())
+            console.log(resultadoConvertido)
     }
     </script>
 </body>
